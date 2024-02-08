@@ -3,8 +3,11 @@ package com.ldms.hdfc.service;
 import com.ldms.hdfc.entity.LoanRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import static com.ldms.hdfc.constant.BankConstant.LOAN_URL;
+@Service
 public class LoanService {
 
     private final RestTemplate restTemplate;
@@ -19,7 +22,7 @@ public class LoanService {
 
         String url = "http://localhost:8086/api/v1/loan";
         ResponseEntity<String> responseEntity = restTemplate.postForEntity(
-                url, loanRequest, String.class);
+                LOAN_URL, loanRequest, String.class);
         return responseEntity.getBody();
     }
 }

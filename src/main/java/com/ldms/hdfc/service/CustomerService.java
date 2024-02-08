@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import static com.ldms.hdfc.constant.BankConstant.CUSTOMER_URL;
+
 @Service
 public class CustomerService {
     private final RestTemplate restTemplate;
@@ -18,18 +20,16 @@ public class CustomerService {
 
     public String create(CustomerRequest customerRequest) {
         // Call Customer API
-        String url = "http://localhost:8085/api/v1/customer/";
         ResponseEntity<String> responseEntity = restTemplate.postForEntity(
-                url, customerRequest, String.class);
+                CUSTOMER_URL, customerRequest, String.class);
         return responseEntity.getBody();
 
     }
 
     public String validateCustomer(final Integer customerId) {
         // Call Customer API
-        String url = String.format("http://localhost:8085/ldm/customer/%d", customerId);
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(
-                url, String.class);
+                String.format("%s/%d",CUSTOMER_URL, customerId), String.class);
         return responseEntity.getBody();
     }
 

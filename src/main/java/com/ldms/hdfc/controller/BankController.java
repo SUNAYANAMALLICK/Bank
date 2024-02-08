@@ -28,8 +28,6 @@ public class BankController {
     // Existing
     @PostMapping(value = "/loan")
     public ResponseEntity<String> requestLoan(@RequestBody  final LoanRequest loanRequest){
-
-
         return new ResponseEntity<>(bankService.request(loanRequest), CREATED);
     }
 }
