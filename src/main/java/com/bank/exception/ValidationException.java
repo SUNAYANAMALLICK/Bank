@@ -1,4 +1,4 @@
-package com.ldms.hdfc.exception;
+package com.bank.exception;
 
 public class ValidationException extends RuntimeException{
     public ValidationException(String message) {

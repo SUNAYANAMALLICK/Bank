@@ -1,13 +1,10 @@
-package com.ldms.hdfc.service;
+package com.bank.service;
 
-import com.ldms.hdfc.entity.CustomerRequest;
-import com.ldms.hdfc.entity.LoanRequest;
-import com.ldms.hdfc.exception.ValidationException;
+import com.bank.constant.BankConstant;
+import com.bank.entity.CustomerRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import static com.ldms.hdfc.constant.BankConstant.CUSTOMER_URL;
 
 @Service
 public class CustomerService {
@@ -21,15 +18,15 @@ public class CustomerService {
     public String create(CustomerRequest customerRequest) {
         // Call Customer API
         ResponseEntity<String> responseEntity = restTemplate.postForEntity(
-                CUSTOMER_URL, customerRequest, String.class);
+                BankConstant.CUSTOMER_URL, customerRequest, String.class);
         return responseEntity.getBody();
 
     }
 
-    public String validateCustomer(final Integer customerId) {
+    public Boolean validateCustomer(final Long customerId) {
         // Call Customer API
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity(
-                String.format("%s/%d",CUSTOMER_URL, customerId), String.class);
+        ResponseEntity<Boolean> responseEntity = restTemplate.getForEntity(
+                String.format("%s/%d", BankConstant.CUSTOMER_URL, customerId), Boolean.class);
         return responseEntity.getBody();
     }
 

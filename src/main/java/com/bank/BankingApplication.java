@@ -1,13 +1,13 @@
-package com.ldms.hdfc;
+package com.bank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HdfcApplication {
+public class BankingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HdfcApplication.class, args);
+		SpringApplication.run(BankingApplication.class, args);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.ldms.hdfc.entity;
+package com.bank.entity;
 
 import java.time.LocalDateTime;
 

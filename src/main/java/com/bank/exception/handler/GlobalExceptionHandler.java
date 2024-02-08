@@ -1,7 +1,7 @@
-package com.ldms.hdfc.exception.handler;
+package com.bank.exception.handler;
 
 
-import com.ldms.hdfc.exception.ValidationException;
+import com.bank.exception.ValidationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

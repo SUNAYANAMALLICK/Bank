@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ldms</groupId>
-	<artifactId>hdfc</artifactId>
+	<artifactId>bank</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>hdfc</name>
 	<description>HDFC Bank</description>
